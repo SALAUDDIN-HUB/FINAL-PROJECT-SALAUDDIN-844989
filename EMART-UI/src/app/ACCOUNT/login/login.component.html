@@ -1,0 +1,51 @@
+<div class="bg">
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-info">
+                    <h1>Login</h1>
+                
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="contact-form">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">User Name</label>
+                            <input type="text" formControlName="uname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }" />
+                            <div *ngIf="submitted && f.uname.errors" class="invalid-feedback">
+                                <div *ngIf="f.uname.errors.required">username is required</div>
+                               
+                            </div>                        
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Password</label>
+                            <input type="password" formControlName="pwd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                            <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                                <div *ngIf="f.pwd.errors.required">Password is required</div>
+                                
+                            </div>
+
+                        </div>
+                
+                        <div class="form-group">        
+                            <div class="col-sm-offset-5 col-sm-20">
+                                <button (click)="onSubmit()"class="btn btn-primary mr-1">Submit</button>
+                                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                            </div>
+                          </div>
+                          <div class="form-group">   
+                            <a class="link" [routerLink]="['/home/register-buyer']" >Buyer Registration</a>
+                          </div>
+                          <div class="form-group">
+                            <a class="link" [routerLink]="['/home/register-seller']" >Seller Registration</a>
+                          </div>
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMart.BuyerService", "EMart.BuyerService\EMart.BuyerService.csproj", "{12F6F28B-3BFB-4C5D-BF0B-2E0C085F33C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMart.SellerService", "EMart.SellerService\EMart.SellerService.csproj", "{E9632A20-7A3A-40CD-83B6-9127D0F4947A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMart.GateWay", "EMart.GateWay\EMart.GateWay.csproj", "{ADE24307-54FB-491C-BBF1-B1F81ADA5461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMart.AdminService", "EMart.AdminService\EMart.AdminService.csproj", "{38C8B072-FDB9-4053-9415-9285E86184DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMart.AccountService", "EMart.AccountService\EMart.AccountService.csproj", "{F22271CC-316E-4D5F-B17C-D31936F709AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12F6F28B-3BFB-4C5D-BF0B-2E0C085F33C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F6F28B-3BFB-4C5D-BF0B-2E0C085F33C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F6F28B-3BFB-4C5D-BF0B-2E0C085F33C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F6F28B-3BFB-4C5D-BF0B-2E0C085F33C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9632A20-7A3A-40CD-83B6-9127D0F4947A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9632A20-7A3A-40CD-83B6-9127D0F4947A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9632A20-7A3A-40CD-83B6-9127D0F4947A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9632A20-7A3A-40CD-83B6-9127D0F4947A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE24307-54FB-491C-BBF1-B1F81ADA5461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE24307-54FB-491C-BBF1-B1F81ADA5461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE24307-54FB-491C-BBF1-B1F81ADA5461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE24307-54FB-491C-BBF1-B1F81ADA5461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C8B072-FDB9-4053-9415-9285E86184DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C8B072-FDB9-4053-9415-9285E86184DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C8B072-FDB9-4053-9415-9285E86184DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C8B072-FDB9-4053-9415-9285E86184DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22271CC-316E-4D5F-B17C-D31936F709AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22271CC-316E-4D5F-B17C-D31936F709AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22271CC-316E-4D5F-B17C-D31936F709AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22271CC-316E-4D5F-B17C-D31936F709AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59EC2AD4-13CD-48C8-BB21-39B24BD02BFA}
+	EndGlobalSection
+EndGlobal

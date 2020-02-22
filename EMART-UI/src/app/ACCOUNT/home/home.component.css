@@ -1,0 +1,13 @@
+
+        .bg {
+            background-image: url("/assets/images/bgimage.png ");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .btn-primary {
+            background-color: #EF7B00;
+        }
+
+        
