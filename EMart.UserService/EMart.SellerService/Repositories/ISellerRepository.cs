@@ -1,8 +1,8 @@
-﻿using System;
+﻿using EMart.SellerService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EMart.SellerService.Models;
 
 namespace EMart.SellerService.Repositories
 {
@@ -10,6 +10,7 @@ namespace EMart.SellerService.Repositories
     {
         void EditProfile(Seller obj);
         Seller GetProfile(string id);
-        
+
+
     }
 }

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace EMart.SellerService.Repositories
 {
- public interface ISelleritemRepository
+ public interface ISellerItemRepository
     {
-
-        void Additems(Items obj);
+        void AddItems(Items obj);
         List<Items> ViewItems(string id);
         void DeleteItem(string id);
         void UpdateItem(Items obj);
-        Items GetItem(string id);
+        Items GetItems(string id);
 
     }
 }

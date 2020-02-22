@@ -14,77 +14,76 @@ namespace EMart.SellerService.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        private readonly ISellerRepository _repo;
-        public ItemController(ISellerRepository repo)
+        private readonly ISellerItemRepository _rep;
+        public ItemController(ISellerItemRepository rep)
         {
-            _repo = repo;
+            _rep = rep;
         }
         [HttpPost]
-        [Route("AddItems")]
-        public IActionResult Additems(Items item)
+        [Route("AddItem")]
+        public IActionResult AddItems(Items item)
         {
             try
             {
-                _repo.Additems(item);
+                _rep.AddItems(item);
                 return Ok();
+
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(ex.InnerException.Message);
             }
 
         }
         [HttpDelete]
-        [Route("Deleteitem/{id}")]
+        [Route("DeleteItem/{id}")]
         public IActionResult DeleteItem(string id)
         {
             try
             {
-                _repo.DeleteItem(id);
+                _rep.DeleteItem(id);
                 return Ok();
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(ex.InnerException.Message);
             }
-
+        }
+        [HttpGet]
+        [Route("GetItems/{itemid}")]
+        public IActionResult GetItems(string itemid)
+        {
+            try
+            {
+                return Ok(_rep.GetItems(itemid));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.InnerException.Message);
+            }
         }
         [HttpPut]
-        [Route("Updateitemsstock")]
-        public IActionResult UpdateItemsStock(Items item)
+        [Route("UpdateItem")]
+        public IActionResult UpdateItem(Items obj)
         {
             try
             {
-                _repo.UpdateItem(item);
+                _rep.UpdateItem(obj);
                 return Ok();
             }
             catch (Exception ex)
             {
                 return NotFound(ex.InnerException.Message);
             }
-
         }
         [HttpGet]
-        [Route("Viewitems/{id}")]
-        public IActionResult ViewItems(string id)
+        [Route("ViewItems/{sellerid}")]
+        public IActionResult ViewItems(string sellerid)
         {
             try
             {
 
-                return Ok(_repo.ViewItems(id));
-            }
-            catch (Exception ex)
-            {
-                return NotFound(ex.InnerException.Message);
-            }
-        }
-        [HttpGet]
-        [Route("Getitem/{id}")]
-        public IActionResult GetItem(string id)
-        {
-            try
-            {
-                return Ok(_repo.GetItem(id));
+                return Ok(_rep.ViewItems(sellerid));
             }
             catch (Exception ex)
             {

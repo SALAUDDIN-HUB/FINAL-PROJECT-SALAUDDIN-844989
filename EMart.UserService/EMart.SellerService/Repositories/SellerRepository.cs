@@ -16,11 +16,14 @@ namespace EMart.SellerService.Repositories
         public void EditProfile(Seller obj)
         {
             _context.Seller.Update(obj);
+            _context.SaveChanges();
+
         }
 
         public Seller GetProfile(string id)
         {
-            throw new NotImplementedException();
+            return _context.Seller.Find(id);
+            
         }
     }
 }
