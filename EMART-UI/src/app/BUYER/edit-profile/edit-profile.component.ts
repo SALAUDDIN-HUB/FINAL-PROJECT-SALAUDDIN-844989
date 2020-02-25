@@ -16,7 +16,7 @@ export class EditProfileComponent implements OnInit {
   username:string;
   password:string;
   emailid:string;
-  mobile:number; 
+  mobileNumber:number; 
 constructor(private formbuilder:FormBuilder) { }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ constructor(private formbuilder:FormBuilder) { }
       username:['',[Validators.required,Validators.pattern('^[A-Z][0-9]$')]],
       password:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{7,10}[~`!@#$%^&*()-+=]$')]],
       emailid:['',[Validators.required,Validators.email]],
-      mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
+      mobileNumber:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
     
 
     });
@@ -40,7 +40,7 @@ constructor(private formbuilder:FormBuilder) { }
       this.item.username=this.EditForm.value["username"];
       this.item.password=this.EditForm.value["password"];
       this.item.emailid=this.EditForm.value["emailid"];
-      this.item.mobile=this.EditForm.value["mobile"];
+      this.item.mobileNumber=this.EditForm.value["mobile"];
       alert('Success!! :-)\n\n');
       console.log(JSON.stringify(this.EditForm)) ;
       this.lists.push(this.item);

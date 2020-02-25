@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms' ;
 import { Buyer } from 'src/app/Models/buyer';
 
+import { AccountService } from 'src/app/Sevices/account.service';
+
 @Component({
   selector: 'app-register-buyer',
   templateUrl: './register-buyer.component.html',
@@ -16,20 +18,20 @@ export class RegisterBuyerComponent implements OnInit {
   username:string;
   password:string;
   emailid:string;
-  mobile:number; 
-  /*createddatetime:Date;*/
+  mobileNumber:number; 
+  createddatetime:Date;
 
 
-  constructor(private formbuilder:FormBuilder) { }
+  constructor(private formbuilder:FormBuilder,private service:AccountService) { }
 
   ngOnInit() {
       this.RegisterForm=this.formbuilder.group({
       id:['',[Validators.required,Validators.pattern('^[0-9]{4}$')]],
-      username:['',[Validators.required,Validators.pattern('^[A-Z][0-9]$')]],
+      username:['',[Validators.required,Validators.pattern('')]],
       password:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{7,10}[~`!@#$%^&*()-+=]$')]],
       emailid:['',[Validators.required,Validators.email]],
-      mobile:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
-    
+      mobileNumber:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
+      createddatetime:['',Validators.required]
 
     });
   }
@@ -44,12 +46,18 @@ export class RegisterBuyerComponent implements OnInit {
       this.item.username=this.RegisterForm.value["username"];
       this.item.password=this.RegisterForm.value["password"];
       this.item.emailid=this.RegisterForm.value["emailid"];
-      this.item.mobile=this.RegisterForm.value["mobile"];
-      alert('Success!! :-)\n\n');
-      console.log(JSON.stringify(this.RegisterForm)) ;
-      this.lists.push(this.item);
+      this.item.mobileNumber=this.RegisterForm.value["mobile"];
+      this.item.createddatetime=this.RegisterForm.value["createdatetime"]
+      console.log(this.item); 
+      this.service.RegisterBuyer(this.item).subscribe(res=>{
+        alert('Registration Successfull');
+      },err=>{
+        console.log(err);
+      })
     }
   }
+    
+  
   get f() { return this.RegisterForm.controls; }
 onReset()
 {

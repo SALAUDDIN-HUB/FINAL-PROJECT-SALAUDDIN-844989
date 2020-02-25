@@ -25,6 +25,8 @@ import { RegisterSellerComponent } from './ACCOUNT/register-seller/register-sell
 import { HomeComponent } from './ACCOUNT/home/home.component';
 import { EditProfileComponent } from './BUYER/edit-profile/edit-profile.component';
 import { EditProfile1Component } from './SELLER/edit-profile1/edit-profile1.component';
+import { AccountService } from './Sevices/account.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,9 +57,10 @@ import { EditProfile1Component } from './SELLER/edit-profile1/edit-profile1.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

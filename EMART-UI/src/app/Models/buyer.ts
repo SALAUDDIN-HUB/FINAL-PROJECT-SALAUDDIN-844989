@@ -1,9 +1,12 @@
 export class Buyer {
+  RegisterBuyer(item: Buyer) {
+    throw new Error("Method not implemented.");
+  }
     id:number;
     username:string;
     password:string;
     emailid:string;
-    mobile:number; 
+    mobileNumber:number; 
     createddatetime:Date;
 
     

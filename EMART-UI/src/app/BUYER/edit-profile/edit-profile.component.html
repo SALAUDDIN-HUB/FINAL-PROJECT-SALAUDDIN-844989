@@ -26,10 +26,10 @@
                 <div class="form-row">
                 <div class="form-group col-5">
                     <label>Mobile</label>
-                    <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
-                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
-                        <div *ngIf="f.mobile.errors.required">Mobile no is required</div>
-                        <div *ngIf="f.mobile.errors.pattern">Mobile no Must be Valid</div>
+                    <input type="text" formControlName="mobileNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
+                    <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobileNumber.errors.required">Mobile no is required</div>
+                        <div *ngIf="f.mobileNumber.errors.pattern">Mobile no Must be Valid</div>
                     </div>
                 </div>
                 </div>
