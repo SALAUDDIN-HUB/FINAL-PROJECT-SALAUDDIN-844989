@@ -51,7 +51,8 @@ namespace EMart.AccountService.Repositories
 
         public void SellerRegister(Seller s)
         {
-            throw new NotImplementedException();
+            _context.Add(s);
+            _context.SaveChanges();
         }
         public List<Buyer> GetBuyer()
         {

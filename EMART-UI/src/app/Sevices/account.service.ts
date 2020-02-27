@@ -16,10 +16,11 @@ export class AccountService {
   constructor(private http:HttpClient) { }
   public RegisterBuyer(buyer:Buyer):Observable<any>
   {
-    return this.http.post<any>(this.url+'RegisterBuyer',buyer,Requestheaders);
+    return this.http.post<any>(this.url+'RegisterBuyer',JSON.stringify(buyer),Requestheaders);
   }
   public RegisterSeller(seller:Seller):Observable<any>
   {
-    return this.http.post<any>(this.url+'RegisterSeller',seller,Requestheaders);
+    return this.http.post<any>(this.url+'RegisterSeller',JSON.stringify(seller),Requestheaders);
   }
+
 }

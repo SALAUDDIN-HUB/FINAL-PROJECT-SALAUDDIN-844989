@@ -1,1 +1,58 @@
-<p>add-category works!</p>
+<div class="bg">
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-info">
+                    <h2>Add Category</h2>
+                
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <form [formGroup]="CategoryForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="form-group col-5">
+                                <label>ID</label>
+                                <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
+                                <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.CategoryId.errors.required">ID is required</div>
+                                    <!-- <div *ngIf="f.CategoryId.errors.pattern">Enter your 4 digit Id followed by E</div> -->
+                                </div>
+                            </div>
+                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-5">
+                                    <label>Category Name</label>
+                                    <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }" />
+                                    <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.CategoryName.errors.required">Category Name is required</div>
+                                        <!-- <div *ngIf="f.CategoryName.errors.pattern">Enter your 4 digit Id followed by E</div> -->
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-5">
+                                        <label>Brief Details</label>
+                                        <input type="text" formControlName="BriefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
+                                        <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">
+                                            <div *ngIf="f.BriefDetails.errors.required">Details is required</div>
+                                            <!-- <div *ngIf="f.BriefDetails.errors.pattern">Enter your 4 digit Id followed by E</div> -->
+                                        </div>
+                                    </div>
+                       </div>
+                        <div class="form-group">        
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Add</button>
+                            </div>
+                          </div>
+                        
+                   
+                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+

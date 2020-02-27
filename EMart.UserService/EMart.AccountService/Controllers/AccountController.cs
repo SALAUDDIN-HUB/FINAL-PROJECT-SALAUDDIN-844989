@@ -60,7 +60,7 @@ namespace EMart.AccountService.Controllers
         }
         [HttpPost]
         [Route("RegisterSeller")]
-        public IActionResult Registerseller(Seller b)
+        public IActionResult RegisterSeller(Seller b)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace EMart.AccountService.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(ex.InnerException.Message);
             }
         }
         [HttpGet]

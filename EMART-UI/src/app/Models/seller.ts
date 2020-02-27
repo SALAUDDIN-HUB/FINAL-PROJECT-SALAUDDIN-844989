@@ -2,11 +2,11 @@ export class Seller {
     id:number;
     username:string;
     password:string;
-    companyname:string;
-    GSTIN:number;
-    brief_about_company:string;
-    postal_address:string;
+    companyName:string;
+    Gstin:number;
+    BriefAboutCompany:string;
+    postalAddress:string;
     website:string;
     emailid:string;
-    contact:number;
+    ContactNumber:string;
 }

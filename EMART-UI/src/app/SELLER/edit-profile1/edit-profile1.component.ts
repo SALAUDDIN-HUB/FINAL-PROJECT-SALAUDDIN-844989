@@ -15,13 +15,13 @@ export class EditProfile1Component implements OnInit {
   id:number;
     username:string;
     password:string;
-    companyname:string;
-    GSTIN:number;
-    brief_about_company:string;
-    postal_address:string;
+    companyName:string;
+    Gstin:number;
+    BriefAboutCompany:string;
+    postalAddress:string;
     website:string;
     emailid:string;
-    contact:number;
+    ContactNumber:number;
 
   constructor(private formbuilder:FormBuilder) { 
 
@@ -32,13 +32,13 @@ export class EditProfile1Component implements OnInit {
       id:['',[Validators.required,Validators.pattern('^[0-9]{4}$')]],
       username:['',[Validators.required,Validators.pattern('^[A-Z][0-9]$')]],
       password:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{7,10}[~`!@#$%^&*()-+=]$')]],
-      companyname:['',[Validators.required,Validators.pattern('^[a-zA-Z]$')]],
-      GSTIN:['',[Validators.required,Validators.pattern('^[0-9]$')]],
-      brief_about_company:['',[Validators.required,Validators.pattern('^[a-zA-z]$')]],
-      postal_address:['',[Validators.required,Validators.pattern('^[a-zA-Z][0-9]$')]],
+      companyName:['',[Validators.required,Validators.pattern('^[a-zA-Z]$')]],
+      Gstin:['',[Validators.required,Validators.pattern('^[0-9]$')]],
+      BriefAboutCompany:['',[Validators.required,Validators.pattern('^[a-zA-z]$')]],
+      postalAddress:['',[Validators.required,Validators.pattern('^[a-zA-Z][0-9]$')]],
       website:['',Validators.required],
       emailid:['',[Validators.required,Validators.email]],
-      contact:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]]
+      ContactNumber:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]]
 
 
   });
@@ -53,13 +53,13 @@ export class EditProfile1Component implements OnInit {
       this.item.id=this.RegisterForm1.value["id"];
       this.item.username=this.RegisterForm1.value["username"];
       this.item.password=this.RegisterForm1.value["password"];
-      this.item.companyname=this.RegisterForm1.value["company name"];
-      this.item.GSTIN=this.RegisterForm1.value["GSTIN"];
-      this.item.brief_about_company=this.RegisterForm1.value["breif-about-company"];
-      this.item.postal_address=this.RegisterForm1.value["postal address"];
+      this.item.companyName=this.RegisterForm1.value["companyName"];
+      this.item.Gstin=this.RegisterForm1.value["Gstin"];
+      this.item.BriefAboutCompany=this.RegisterForm1.value["BreifAboutCompany"];
+      this.item.postalAddress=this.RegisterForm1.value["postalAddress"];
       this.item.website=this.RegisterForm1.value["website"];
       this.item.emailid=this.RegisterForm1.value["emailid"];
-      this.item.contact=this.RegisterForm1.value["contact"];
+      this.item.ContactNumber=this.RegisterForm1.value["ContactNumber"];
       alert('Success!! :-)\n\n');
       console.log(JSON.stringify(this.RegisterForm1)) ;
       this.lists.push(this.item);

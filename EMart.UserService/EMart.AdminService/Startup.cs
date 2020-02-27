@@ -31,6 +31,12 @@ namespace EMart.AdminService
             services.AddTransient<IAdminRepository, AdminRepository>();
 
             services.AddControllers();
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()
+                 .AllowAnyMethod()
+                 .AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,7 @@ namespace EMart.AdminService
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("AllowOrigin");
 
             app.UseEndpoints(endpoints =>
             {

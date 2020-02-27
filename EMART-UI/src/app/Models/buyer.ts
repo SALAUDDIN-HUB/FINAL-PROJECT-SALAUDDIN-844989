@@ -7,7 +7,7 @@ export class Buyer {
     password:string;
     emailid:string;
     mobileNumber:number; 
-    createddatetime:Date;
+    createdatetime:Date;
 
     
 }

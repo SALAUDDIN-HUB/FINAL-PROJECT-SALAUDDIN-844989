@@ -14,15 +14,7 @@ export class RegisterBuyerComponent implements OnInit {
   submitted=false;
   lists:Buyer[]=[];
   item:Buyer;
-  id:number;
-  username:string;
-  password:string;
-  emailid:string;
-  mobileNumber:number; 
-  createddatetime:Date;
-
-
-  constructor(private formbuilder:FormBuilder,private service:AccountService) { }
+constructor(private formbuilder:FormBuilder,private service:AccountService) { }
 
   ngOnInit() {
       this.RegisterForm=this.formbuilder.group({
@@ -31,7 +23,7 @@ export class RegisterBuyerComponent implements OnInit {
       password:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{7,10}[~`!@#$%^&*()-+=]$')]],
       emailid:['',[Validators.required,Validators.email]],
       mobileNumber:['',[Validators.required,Validators.pattern('^[6-9][0-9]{9}$')]],
-      createddatetime:['',Validators.required]
+      createdatetime:['',Validators.required]
 
     });
   }
@@ -46,8 +38,8 @@ export class RegisterBuyerComponent implements OnInit {
       this.item.username=this.RegisterForm.value["username"];
       this.item.password=this.RegisterForm.value["password"];
       this.item.emailid=this.RegisterForm.value["emailid"];
-      this.item.mobileNumber=this.RegisterForm.value["mobile"];
-      this.item.createddatetime=this.RegisterForm.value["createdatetime"]
+      this.item.mobileNumber=this.RegisterForm.value["mobileNumber"];
+      this.item. createdatetime=this.RegisterForm.value["createdatetime"]
       console.log(this.item); 
       this.service.RegisterBuyer(this.item).subscribe(res=>{
         alert('Registration Successfull');
