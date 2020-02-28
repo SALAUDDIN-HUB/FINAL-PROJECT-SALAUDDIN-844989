@@ -14,7 +14,7 @@ export class ItemService {
   constructor(private http:HttpClient) { }
   public AddItems(item:Items):Observable<any>
     {
-      return this.http.post<any>(this.url+'Item/Additem',JSON.stringify(item),Requestheaders)
+      return this.http.post<any>(this.url+'Item/AddItem',JSON.stringify(item),Requestheaders)
     }
     public ViewItems(sellerid:string):Observable<any>
   {
@@ -32,8 +32,8 @@ export class ItemService {
   {
     return this.http.get<any>(this.url+'Item/GetItems/'+id,Requestheaders);
   }
-  public UpdateItems(items:Items):Observable<any>
+  public UpdateItem(items:Items):Observable<any>
   {
-    return this.http.put<any>(this.url+'Item/UpdateItemsStock',items,Requestheaders);
+    return this.http.put<any>(this.url+'Item/UpdateItem',items,Requestheaders);
   }
 }

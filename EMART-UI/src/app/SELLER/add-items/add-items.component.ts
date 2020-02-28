@@ -22,12 +22,12 @@ export class AddItemsComponent implements OnInit {
     this.Itemform=this.formbuilder.group({
     id:['',[Validators.required]],
     categoryId:['',Validators.required],
-    Sub_Category_id:['',Validators.required],
+    subCategoryId:['',Validators.required],
     sellerid:['',Validators.required],
     price:['',Validators.required],
     itemName:['',Validators.required],
-    ItemDescription:['',Validators.required],
-    stock_number:['',Validators.required],
+    itemDescription:['',Validators.required],
+    stockNumber:['',Validators.required],
     remarks:['',Validators.required],
     });
   }
@@ -39,13 +39,13 @@ export class AddItemsComponent implements OnInit {
     {
       this.item=new Items();
       this.item.id=this.Itemform.value["id"];
-      this.item.category_id=this.Itemform.value["categoryId"];
-      this.item.Sub_Category_id=this.Itemform.value["Sub_Category_id"];
+      this.item.categoryId=this.Itemform.value["categoryId"];
+      this.item.subCategoryId=this.Itemform.value["subCategoryId"];
       this.item.sellerid=this.Itemform.value["sellerid"];
       this.item.price=Number(this.Itemform.value["price"]);
       this.item.itemName=this.Itemform.value["itemName"];
-      this.item.ItemDescription=this.Itemform.value["ItemDescription"];
-      this.item.stock_number=Number(this.Itemform.value["stock_number"]);
+      this.item.itemDescription=this.Itemform.value["itemDescription"];
+      this.item.stockNumber=Number(this.Itemform.value["stockNumber"]);
       this.item.remarks=this.Itemform.value["remarks"];
       console.log(this.item); 
       this.service.AddItems(this.item).subscribe(res=>{
@@ -63,16 +63,15 @@ export class AddItemsComponent implements OnInit {
     this.service.GetItems(id1).subscribe(res=>{
       this.item=res;
       console.log(this.item);
-      this.Itemform.setValue({
+      this.Itemform.patchValue({
         id:this.item.id,
-        category_id:this.item.category_id,
-        Sub_Category_id:this.item.Sub_Category_id,
+        categoryId:this.item.categoryId,
+        subCategoryId:this.item.subCategoryId,
         sellerid:this.item.sellerid,
-        
         price:this.item.price,
         itemName:this.item.itemName,
-       ItemDescription:this.item.ItemDescription,
-        stock_number:this.item.stock_number,
+       itemDescription:this.item.itemDescription,
+        stockNumber:this.item.stockNumber,
         remarks:this.item.remarks
       })
     })
@@ -82,16 +81,16 @@ export class AddItemsComponent implements OnInit {
   {
     this.item=new Items();
     this.item.id=this.Itemform.value['id'],
-        this.item.category_id=this.Itemform.value['category_id'],
-      this.item.Sub_Category_id=this.Itemform.value['Sub_Category_id'],
+        this.item.categoryId=this.Itemform.value['categoryId'],
+      this.item.subCategoryId=this.Itemform.value['subCategoryId'],
       this.item.sellerid=this.Itemform.value['sellerid'],
       this.item.price=this.Itemform.value['price'],
       this.item.itemName=this.Itemform.value['itemName'],
-      this.item.ItemDescription=this.Itemform.value['ItemDescription'],
-      this.item.stock_number=this.Itemform.value['stock_number'],
+      this.item.itemDescription=this.Itemform.value['itemDescription'],
+      this.item.stockNumber=this.Itemform.value['stockNumber'],
       this.item.remarks=this.Itemform.value['remarks']
       console.log(this.item);
-      this.service.UpdateItems(this.item).subscribe(res=>{
+      this.service.UpdateItem(this.item).subscribe(res=>{
         console.log('Record Updated');
       }
       ,err=>{

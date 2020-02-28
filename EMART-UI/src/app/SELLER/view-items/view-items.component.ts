@@ -17,5 +17,17 @@ export class ViewItemsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+  ViewItems()
+  {
+   let id=this.sellerid; 
+    this.service.ViewItems(id).subscribe(res=>
+      {
+        this.list=res;
+        console.log(this.list);
+      },
+      err=>{
+        console.log(err);
+      });
+  }
+
 }

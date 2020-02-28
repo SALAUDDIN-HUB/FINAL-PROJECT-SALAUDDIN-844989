@@ -21,18 +21,18 @@
 
                         <div class=form group>
                             <label class="control-label col-sm-2">category id:</label>
-                            <input type="text" formControlName="category_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category_id.errors }" />
-                            <div *ngIf="submitted && f.category_id.errors" class="invalid-feedback">
-                                <div *ngIf="f.category_id.errors.required">Category is required</div>
+                            <input type="text" formControlName="categoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryId.errors }" />
+                            <div *ngIf="submitted && f.categoryId.errors" class="invalid-feedback">
+                                <div *ngIf="f.categoryId.errors.required">Category is required</div>
                                 <!-- <div *ngIf="f.cid.errors.pattern">Enter Category</div> -->
                             </div> 
 
                         </div>
                         <div class=form group>
                             <label class="control-label col-sm-2">Sub Category id:</label>
-                            <input type="text" formControlName="Sub_Category_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Sub_Category_id.errors }" />
-                            <div *ngIf="submitted && f.Sub_Category_id.errors" class="invalid-feedback">
-                                <div *ngIf="f.Sub_Category_id.errors.required">Sub Category is required</div>
+                            <input type="text" formControlName="subCategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subCategoryId.errors }" />
+                            <div *ngIf="submitted && f.subCategoryId.errors" class="invalid-feedback">
+                                <div *ngIf="f.subCategoryId.errors.required">Sub Category is required</div>
                                 <!-- <div *ngIf="f.scid.pattern">Enter Sub Category</div> -->
                             </div> 
 
@@ -66,18 +66,18 @@
                         </div>
                         <div class=form group>
                             <label class="control-label col-sm-2">Description</label>
-                            <input type="text" formControlName="ItemDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ItemDescription.errors }" />
-                            <div *ngIf="submitted && f.ItemDescription.errors" class="invalid-feedback">
-                                <div *ngIf="f.ItemDescription.errors.required">description is required</div>
+                            <input type="text" formControlName="itemDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemDescription.errors }" />
+                            <div *ngIf="submitted && f.itemDescription.errors" class="invalid-feedback">
+                                <div *ngIf="f.itemDescription.errors.required">description is required</div>
                                 <!-- <div *ngIf="f.description.pattern">Enter description</div> -->
                             </div> 
 
                         </div>
                         <div class=form group>
                             <label class="control-label col-sm-2">Stock Number:</label>
-                            <input type="number" formControlName="stock_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stock_number.errors }" />
-                            <div *ngIf="submitted && f.stock_number.errors" class="invalid-feedback">
-                                <div *ngIf="f.stock_number.errors.required">Username is required</div>
+                            <input type="number" formControlName="stockNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stockNumber.errors }" />
+                            <div *ngIf="submitted && f.stockNumber.errors" class="invalid-feedback">
+                                <div *ngIf="f.stockNumber.errors.required">Username is required</div>
                                 <!-- <div *ngIf="f.stocknumber.pattern"></div> -->
                             </div> 
 
