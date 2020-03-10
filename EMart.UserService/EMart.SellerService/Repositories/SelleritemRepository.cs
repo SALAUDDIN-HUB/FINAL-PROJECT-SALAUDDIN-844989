@@ -25,6 +25,21 @@ namespace EMart.SellerService.Repositories
             _context.SaveChanges();
         }
 
+        public List<Category> GetAllCategories()
+        {
+            return _context.Category.ToList(); 
+        }
+
+       
+
+        public List<SubCategory> GetAllSubCategories(string cid)
+        {
+            List<SubCategory> subCategory = _context.SubCategory.Where(i => i.CategoryId == cid).ToList();
+            return subCategory;
+        }
+
+        
+
         public Items GetItems(string sid)
         {
             return _context.Items.Find(sid);

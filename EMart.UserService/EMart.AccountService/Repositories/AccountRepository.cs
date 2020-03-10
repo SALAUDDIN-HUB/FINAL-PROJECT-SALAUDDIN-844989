@@ -13,17 +13,10 @@ namespace EMart.AccountService.Repositories
         {
             _context = context;
         }
-        public bool Buyerlogin(string username, string password)
+        public Buyer Buyerlogin(string username, string password)
         {
             Buyer b = _context.Buyer.SingleOrDefault(i => i.Username == username && i.Password == password);
-            if(b.Username==username && b.Password==password)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return b;
 
 
             
@@ -35,17 +28,10 @@ namespace EMart.AccountService.Repositories
             _context.SaveChanges();
         }
 
-        public bool Sellerlogin(string username, string password)
+        public Seller Sellerlogin(string username, string password)
         {
             Seller s = _context.Seller.SingleOrDefault(i => i.Username == username && i.Password == password);
-                if(s.Username==username && s.Password==password)
-            {
-                return true;
-            }
-                else
-            {
-                return false;
-            }
+            return s;
            
         }
 

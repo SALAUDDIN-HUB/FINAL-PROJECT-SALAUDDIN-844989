@@ -1,0 +1,74 @@
+{
+  "ReRoutes": [
+    //Account
+    {
+      "DownstreamPathTemplate": "/api/Account/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52705
+        }
+      ],
+      "UpstreamPathTemplate": "/Account/{catchAll}"
+
+    },
+    // Admin
+    {
+      "DownstreamPathTemplate": "/api/Admin/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52700
+        }
+      ],
+      "UpstreamPathTemplate": "/Admin/{catchAll}"
+
+    },
+
+    // Buyer
+    {
+      "DownstreamPathTemplate": "/api/Buyer/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52671
+        }
+      ],
+      "UpstreamPathTemplate": "/Buyer/{catchAll}"
+
+    },
+
+    // seller
+    {
+      "DownstreamPathTemplate": "/api/Item/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52675
+        }
+      ],
+      "UpstreamPathTemplate": "/Item/{catchAll}"
+
+    },
+    // Admin
+    {
+      "DownstreamPathTemplate": "/api/Seller/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 52675
+        }
+      ],
+      "UpstreamPathTemplate": "/Seller/{catchAll}"
+
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:52676"
+  }
+}

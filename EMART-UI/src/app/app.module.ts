@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SellerLandingPageComponent } from './SELLER/seller-landing-page/seller-landing-page.component';
@@ -9,7 +9,6 @@ import { ViewItemsComponent } from './SELLER/view-items/view-items.component';
 import { ViewReportsComponent } from './SELLER/view-reports/view-reports.component';
 import { ViewProfileComponent } from './SELLER/view-profile/view-profile.component';
 import { BuyerLandingPageComponent } from './BUYER/buyer-landing-page/buyer-landing-page.component';
-import { SerachItemsComponent } from './BUYER/search-items/serach-items.component';
 import { ViewCartComponent } from './BUYER/view-cart/view-cart.component';
 import { PurchaseHistoryComponent } from './BUYER/purchase-history/purchase-history.component';
 import { BuyProductComponent } from './BUYER/buy-product/buy-product.component';
@@ -24,9 +23,14 @@ import { RegisterBuyerComponent } from './ACCOUNT/register-buyer/register-buyer.
 import { RegisterSellerComponent } from './ACCOUNT/register-seller/register-seller.component';
 import { HomeComponent } from './ACCOUNT/home/home.component';
 import { EditProfileComponent } from './BUYER/edit-profile/edit-profile.component';
-import { EditProfile1Component } from './SELLER/edit-profile1/edit-profile1.component';
 import { AccountService } from './Sevices/account.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchitemsComponent } from './BUYER/searchitems/searchitems.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,6 @@ import { HttpClientModule } from '@angular/common/http';
     ViewReportsComponent,
     ViewProfileComponent,
     BuyerLandingPageComponent,
-    SerachItemsComponent,
     ViewCartComponent,
     PurchaseHistoryComponent,
     BuyProductComponent,
@@ -52,13 +55,15 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterSellerComponent,
     HomeComponent,
     EditProfileComponent,
-    EditProfile1Component
+    SearchitemsComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

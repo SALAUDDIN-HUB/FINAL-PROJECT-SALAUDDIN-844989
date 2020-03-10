@@ -90,5 +90,32 @@ namespace EMart.SellerService.Controllers
                 return NotFound(ex.InnerException.Message);
             }
         }
+        [HttpGet]
+        [Route("GetAllCategories")]
+        public IActionResult GetAllCategories()
+        {
+            try
+            {
+                return Ok(_rep.GetAllCategories());
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetAllSubCategories/{CategoryId}")]
+        public IActionResult GetAllSubCategories(string CategoryId)
+        {
+            try
+            {
+                return Ok(_rep.GetAllSubCategories(CategoryId));
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
     }
 }

@@ -1,47 +1,38 @@
+<div class="bg">
 <div class="container">
     <div class="offset-5">
         <h5 class >Edit Profile</h5>
-        <div class="card-">
+        <div class="card-body">
             <form [formGroup]="EditForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <div class="form-group col-10">
+                        <label>Id:</label>
+                        <input type="text" formControlName="id" class="form-control" />
+                        
+                    </div>
+                </div>
+                
                    <div class="form-row">
-                    <div class="form-group col-5">
+                    <div class="form-group col-10">
                         <label>UserName</label>
-                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                            <div *ngIf="f.username.errors.required"> Name is required</div>
-                            <div *ngIf="f.username.errors.pattern">Enter valid format</div>
-                        </div>
+                        <input type="text" formControlName="username" class="form-control" />
+                        
                     </div>
                 </div>
+                
                 <div class="form-row">
-                    <div class="form-group col-5">
-                        <label>Password</label>
-                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                            <div *ngIf="f.password.errors.required">password is required</div>
-                            <div *ngIf="f.password.errors.pattern">password Must be Valid</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                <div class="form-group col-5">
+                <div class="form-group col-10">
                     <label>Mobile</label>
-                    <input type="text" formControlName="mobileNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
-                    <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
-                        <div *ngIf="f.mobileNumber.errors.required">Mobile no is required</div>
-                        <div *ngIf="f.mobileNumber.errors.pattern">Mobile no Must be Valid</div>
-                    </div>
+                    <input type="text" formControlName="mobileNumber" class="form-control"   />
+                    
                 </div>
                 </div>
                 
                 <div class="form-row">
-                <div class="form-group col-5">
+                <div class="form-group col-10">
                     <label>EmailId</label>
-                    <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
-                    <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
-                        <div *ngIf="f.emailid.errors.required">Emailid is required</div>
-                        <div *ngIf="f.emailid.errors.pattern">Emailid must be a valid email address</div>
-                    </div>
+                    <input type="text" formControlName="emailid" class="form-control"  />
+                    
                 </div>
                 </div>
             
@@ -49,14 +40,15 @@
                     <div class="form-group col-5">
                 
                 <div class="text-center">
-                    <button (click)="onSubmit()"class="btn btn-primary mr-1">Submit</button>
-                    <button class="btn btn-secondary" type="reset" (click)="onReset()">Edit</button>
+                  <!-- //  <button (click)="onSubmit()"class="btn btn-primary mr-1">Submit</button> -->
+                    <button type="submit" class="btn btn-secondary" >Update</button>
                    </div>
                    </div>
                 </div>
         
             </form>
         </div>
+    </div>
     </div>
     </div>
     <router-outlet></router-outlet>

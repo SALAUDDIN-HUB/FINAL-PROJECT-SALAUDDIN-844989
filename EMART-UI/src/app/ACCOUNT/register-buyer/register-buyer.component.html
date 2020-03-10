@@ -11,15 +11,15 @@
                 <div class="contact-form">
                     <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
                         <div class="form-row">
-                            <div class="form-group col-5">
+                            <!-- <div class="form-group col-5">
                                 <label>ID</label>
                                 <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
                                 <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
                                     <div *ngIf="f.id.errors.required">ID is required</div>
                                     <div *ngIf="f.id.errors.pattern">Enter your 4 digit Id followed by E</div>
                                 </div>
-                            </div>
-                            <div class="form-group col-5">
+                            </div> -->
+                            <div class="form-group col-10">
                                 <label>UserName</label>
                                 <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -27,7 +27,9 @@
                                     <div *ngIf="f.username.errors.pattern">Enter Username</div>
                                 </div>
                             </div>
-                            <div class="form-group col-5">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-10">
                                 <label>Password</label>
                                 <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -35,8 +37,9 @@
                                     <div *ngIf="f.password.errors.pattern">Password must be at least 6 characters and Alphanumeric</div>
                                 </div>
                             </div>
-                           
-                             <div class="form-group col-5">
+                        </div>
+                        <div class="form-row">
+                             <div class="form-group col-10">
                                  
                                 <label>Email</label>
                                 <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
@@ -45,7 +48,9 @@
                                     <div *ngIf="f.emailid.errors.pattern">Email must be a valid email address</div>
                                 </div>
                              </div>
-                             <div class="form-group col-5">
+                        </div>
+                        <div class="form-row">
+                             <div class="form-group col-10">
                                 <label>Mobile</label>
                                 <!-- <input type="text" size="2" value="+91" readonly="readonly"> -->
                                 <input type="text" formControlName="mobileNumber" maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
@@ -63,8 +68,9 @@
             
                              
                         </div>
+                    
                         <div class="form-row">
-                            <div class="form-group col-5">
+                            <div class="form-group col-10">
                                 <label>CreateDateTime</label>
                                 <input type="date" formControlName="createdatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createdatetime.errors }" />
                                 <div *ngIf="submitted && f.createdatetime.errors" class="invalid-feedback">
@@ -75,8 +81,8 @@
                             </div>
                         <div class="form-group">        
                             <div class="col-sm-offset-5 col-sm-20">
-                                <button type="submit" class="btn btn-default">Add items</button>
-                               <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button> 
+                                <button type="submit" class="btn btn-default">Register</button>
+                               <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button> 
                             </div>
                             </div>
                             
@@ -86,7 +92,7 @@
                 </div>
             </div>
         
-    
+    </div>
 <router-outlet></router-outlet>
 
 

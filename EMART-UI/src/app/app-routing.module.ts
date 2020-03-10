@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BuyerLandingPageComponent } from './BUYER/buyer-landing-page/buyer-landing-page.component';
 import { BuyProductComponent } from './BUYER/buy-product/buy-product.component';
 import { PurchaseHistoryComponent } from './BUYER/purchase-history/purchase-history.component';
-import { SerachItemsComponent } from './BUYER/search-items/serach-items.component';
+
 import { ViewCartComponent } from './BUYER/view-cart/view-cart.component';
 import { SellerLandingPageComponent } from './SELLER/seller-landing-page/seller-landing-page.component';
 import { AddItemsComponent } from './SELLER/add-items/add-items.component';
@@ -20,23 +20,28 @@ import { RegisterBuyerComponent } from './ACCOUNT/register-buyer/register-buyer.
 import { RegisterSellerComponent } from './ACCOUNT/register-seller/register-seller.component';
 import { HomeComponent } from './ACCOUNT/home/home.component';
 import { EditProfileComponent } from './BUYER/edit-profile/edit-profile.component';
-import { EditProfile1Component } from './SELLER/edit-profile1/edit-profile1.component';
+import {ViewItemsComponent} from './SELLER/view-items/view-items.component';
+import { SearchitemsComponent } from './BUYER/searchitems/searchitems.component';
+
+
+
 
 
 const routes: Routes = [
   {path:'buyer-landing-page',component:BuyerLandingPageComponent,children:[
     {path:'buy-product',component:BuyProductComponent},
     {path:'purchase-history',component:PurchaseHistoryComponent},
-    {path:'search-items',component:SerachItemsComponent},
+   {path:'searchitems',component:SearchitemsComponent},
     {path:'view-cart',component:ViewCartComponent},
-    {path:'edit-profile',component:EditProfileComponent}
+    {path:'edit-profile',component:EditProfileComponent},
+    
   ]},
   {path:'seller-landing-page',component:SellerLandingPageComponent,children:[
     {path:'add-items',component:AddItemsComponent},
-    {path:'view-items',component:ViewCartComponent},
+    {path:'view-items',component:ViewItemsComponent},
     {path:'view-profile',component:ViewProfileComponent},
     {path:'view-reports',component:ViewReportsComponent},
-    {path:'edit-profile1',component:EditProfile1Component}
+    
   ]},
   {path:'admin-landing-page',component:AdminLandingPageComponent,children:[
     {path:'add-category',component:AddCategoryComponent},
@@ -51,7 +56,8 @@ const routes: Routes = [
   {path:'register-seller',component:RegisterSellerComponent},
   
   
-]}
+]},
+{path:'', component:HomeComponent}
 ];
 
 @NgModule({

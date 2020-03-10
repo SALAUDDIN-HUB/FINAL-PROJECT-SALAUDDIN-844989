@@ -27,6 +27,7 @@ namespace EMart.SellerService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EMARTDBContext>();
+            services.AddTransient<ISellerRepository, SellerRepository>();
             services.AddTransient<ISellerItemRepository, SellerItemRepository>();
             services.AddControllers();
             services.AddCors(c =>

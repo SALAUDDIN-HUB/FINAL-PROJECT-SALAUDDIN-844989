@@ -1,8 +1,12 @@
-
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,FormGroup,Validators} from '@angular/forms';
-import {Items} from 'src/app/Models/items';
+import { Items } from 'src/app/Models/items';
+import { combineLatest } from 'rxjs';
 import { ItemService } from 'src/app/Sevices/item.service';
+import { Router } from '@angular/router';
+import { Category } from 'src/app/Models/category';
+import { SubCategory } from 'src/app/Models/sub-category';
+
 
 @Component({
   selector: 'app-add-items',
@@ -10,20 +14,31 @@ import { ItemService } from 'src/app/Sevices/item.service';
   styleUrls: ['./add-items.component.css']
 })
 export class AddItemsComponent implements OnInit {
-  Itemform:FormGroup;
+  additemform:FormGroup;
   submitted=false;
   item:Items;
+  categorylist:Category[];
+  subcategorylist:SubCategory[];
+  categoryId:string;
+  image:string;
   
 
 
-  constructor(private formbuilder:FormBuilder,private service:ItemService) { }
+  constructor(private formbuilder:FormBuilder,private service:ItemService,private route:Router) {
+    this.service.GetAllCategories().subscribe(res=>{
+      this.categorylist=res;
+      console.log(this.categorylist);
+    })
+
+    this.item=new Items();
+  }
 
   ngOnInit() {
-    this.Itemform=this.formbuilder.group({
-    id:['',[Validators.required]],
+    this.additemform=this.formbuilder.group({
+//id:['',Validators.required],
     categoryId:['',Validators.required],
     subCategoryId:['',Validators.required],
-    sellerid:['',Validators.required],
+   sellerid:[''],
     price:['',Validators.required],
     itemName:['',Validators.required],
     itemDescription:['',Validators.required],
@@ -31,71 +46,49 @@ export class AddItemsComponent implements OnInit {
     remarks:['',Validators.required],
     });
   }
-  
-  OnSubmit()
+   OnSubmit()
   {
     this.submitted=true;
-    if(this.Itemform.valid)
-    {
-      this.item=new Items();
-      this.item.id=this.Itemform.value["id"];
-      this.item.categoryId=this.Itemform.value["categoryId"];
-      this.item.subCategoryId=this.Itemform.value["subCategoryId"];
-      this.item.sellerid=this.Itemform.value["sellerid"];
-      this.item.price=Number(this.Itemform.value["price"]);
-      this.item.itemName=this.Itemform.value["itemName"];
-      this.item.itemDescription=this.Itemform.value["itemDescription"];
-      this.item.stockNumber=Number(this.Itemform.value["stockNumber"]);
-      this.item.remarks=this.Itemform.value["remarks"];
-      console.log(this.item); 
-      this.service.AddItems(this.item).subscribe(res=>{
-        alert('Added Successfull');
-      },err=>{
-        console.log(err);
-      })
-    }
-  }
-  get f(){return this.Itemform.controls;}
-  Search()
-  {
-    let id1=this.Itemform.value["id"];
-    console.log(id1);
-    this.service.GetItems(id1).subscribe(res=>{
-      this.item=res;
-      console.log(this.item);
-      this.Itemform.patchValue({
-        id:this.item.id,
-        categoryId:this.item.categoryId,
-        subCategoryId:this.item.subCategoryId,
-        sellerid:this.item.sellerid,
-        price:this.item.price,
-        itemName:this.item.itemName,
-       itemDescription:this.item.itemDescription,
-        stockNumber:this.item.stockNumber,
-        remarks:this.item.remarks
-      })
+    // if(this.additemform.valid)
+    // {
+      alert('Success!!\n\n')
+      this.item.id='I'+Math.round(Math.random()*1000);
+      this.item.categoryId=this.additemform.value['categoryId'],
+     this.item.subCategoryId=this.additemform.value['subCategoryId'],
+     this.item.sellerid=localStorage.getItem('seller'),
+     this.item.price=Number(this.additemform.value['price']),
+     this.item.itemName=this.additemform.value['itemName'],
+     this.item.itemDescription=this.additemform.value['itemDescription'],
+     this.item.stockNumber=Number(this.additemform.value['stockNumber']),
+     this.item.remarks=this.additemform.value['remarks'],
+     this.item.image=this.image;
+     console.log(this.item); 
+     this.service.AddItems(this.item).subscribe(res=>{
+       alert('Item Added Successfully');
+     },err=>{
+       console.log(err);
     })
-  
+    // }
   }
-  Update()
+  get f() { return this.additemform.controls; }
+onReset()
+{
+this.submitted=false;
+this.additemform.reset();
+}
+GetAllSubCategories()
   {
-    this.item=new Items();
-    this.item.id=this.Itemform.value['id'],
-        this.item.categoryId=this.Itemform.value['categoryId'],
-      this.item.subCategoryId=this.Itemform.value['subCategoryId'],
-      this.item.sellerid=this.Itemform.value['sellerid'],
-      this.item.price=this.Itemform.value['price'],
-      this.item.itemName=this.Itemform.value['itemName'],
-      this.item.itemDescription=this.Itemform.value['itemDescription'],
-      this.item.stockNumber=this.Itemform.value['stockNumber'],
-      this.item.remarks=this.Itemform.value['remarks']
-      console.log(this.item);
-      this.service.UpdateItem(this.item).subscribe(res=>{
-        console.log('Record Updated');
-      }
-      ,err=>{
-        console.log(err);
-      })
-    
-    }
+    let categoryId=this.additemform.value["categoryId"];
+    console.log(categoryId);
+    this.service.GetAllSubCategories(categoryId).subscribe(res=>{
+      this.subcategorylist=res;
+      console.log(this.subcategorylist);
+    })
+  }
+  fileEvent(event){
+    this.image = event.target.files[0].name;
+}
+
+
+
 }

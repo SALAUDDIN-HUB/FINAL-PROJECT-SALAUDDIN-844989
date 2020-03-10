@@ -16,6 +16,7 @@ namespace EMart.BuyerService.Models
         }
 
         public virtual DbSet<Buyer> Buyer { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Discounts> Discounts { get; set; }
         public virtual DbSet<Items> Items { get; set; }
@@ -76,6 +77,92 @@ namespace EMart.BuyerService.Models
                     .HasColumnName("username")
                     .HasMaxLength(20)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.HasKey(e => e.Cartid)
+                    .HasName("PK__cart__41663FC0BB43693C");
+
+                entity.ToTable("cart");
+
+                entity.Property(e => e.Cartid)
+                    .HasColumnName("cartid")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.BuyerId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CategoryId)
+                    .HasColumnName("category_id")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image)
+                    .HasColumnName("image")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemDescription)
+                    .HasColumnName("item_description")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemName)
+                    .HasColumnName("item_name")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Price).HasColumnName("price");
+
+                entity.Property(e => e.Remarks)
+                    .HasColumnName("remarks")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Sellerid)
+                    .HasColumnName("sellerid")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StockNumber).HasColumnName("stock_number");
+
+                entity.Property(e => e.SubCategoryId)
+                    .HasColumnName("Sub_category_id")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Buyer)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.BuyerId)
+                    .HasConstraintName("FK__cart__BuyerId__5FB337D6");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.CategoryId)
+                    .HasConstraintName("FK__cart__category_i__5DCAEF64");
+
+                entity.HasOne(d => d.IdNavigation)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Id)
+                    .HasConstraintName("FK__cart__id__5CD6CB2B");
+
+                entity.HasOne(d => d.Seller)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.Sellerid)
+                    .HasConstraintName("FK__cart__sellerid__60A75C0F");
+
+                entity.HasOne(d => d.SubCategory)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.SubCategoryId)
+                    .HasConstraintName("FK__cart__Sub_catego__5EBF139D");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -141,6 +228,11 @@ namespace EMart.BuyerService.Models
                 entity.Property(e => e.CategoryId)
                     .HasColumnName("category_id")
                     .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image)
+                    .HasColumnName("image")
+                    .HasMaxLength(30)
                     .IsUnicode(false);
 
                 entity.Property(e => e.ItemDescription)
@@ -209,6 +301,11 @@ namespace EMart.BuyerService.Models
 
                 entity.Property(e => e.ItemId)
                     .HasColumnName("Item_id")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Numberofitems)
+                    .HasColumnName("numberofitems")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 

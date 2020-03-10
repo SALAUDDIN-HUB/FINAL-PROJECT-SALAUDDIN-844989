@@ -10,18 +10,18 @@
             <div class="col-md-6">
                 <div class="contact-form">
                     <form [formGroup]="CategoryForm" (ngSubmit)="onSubmit()">
-                        <div class="form-row">
+                        <!-- <div class="form-row">
                             <div class="form-group col-5">
                                 <label>ID</label>
                                 <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
                                 <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
                                     <div *ngIf="f.CategoryId.errors.required">ID is required</div>
-                                    <!-- <div *ngIf="f.CategoryId.errors.pattern">Enter your 4 digit Id followed by E</div> -->
+                                     <div *ngIf="f.CategoryId.errors.pattern">Enter your 4 digit Id followed by E</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                             <div class="form-row">
-                                <div class="form-group col-5">
+                                <div class="form-group col-10">
                                     <label>Category Name</label>
                                     <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }" />
                                     <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
@@ -31,7 +31,7 @@
                                 </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-5">
+                                    <div class="form-group col-10">
                                         <label>Brief Details</label>
                                         <input type="text" formControlName="BriefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
                                         <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">

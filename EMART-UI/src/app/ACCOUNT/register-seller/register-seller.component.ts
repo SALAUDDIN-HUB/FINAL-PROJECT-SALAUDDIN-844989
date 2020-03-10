@@ -19,7 +19,7 @@ export class RegisterSellerComponent implements OnInit {
 
   ngOnInit() {
     this.RegisterForm1=this.formbuilder.group({
-      id:['',Validators.required],
+      // id:['',Validators.required],
       username:['',Validators.required],
       password:['',Validators.required],
       companyName:['',Validators.required],
@@ -41,7 +41,7 @@ export class RegisterSellerComponent implements OnInit {
     if(this.RegisterForm1.valid)
     {
       this.seller=new Seller();
-      this.seller.id=this.RegisterForm1.value["id"];
+      this.seller.id='SELLER'+Math.round(Math.random()*100);
       this.seller.username=this.RegisterForm1.value["username"];
       this.seller.password=this.RegisterForm1.value["password"];
       this.seller.companyName=this.RegisterForm1.value["companyName"];

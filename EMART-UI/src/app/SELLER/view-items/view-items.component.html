@@ -1,0 +1,131 @@
+
+                       
+
+                            
+            <div class="form-group">
+              <table class="table table-bordered">
+                  <tr style="color: #ff9b00;">
+                    <th>ItemId</th>
+                    <th>Category ID</th>
+                    <th>SubCategory ID</th>
+                    <th>Seller ID</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Stock</th>
+                    <th>Remarks</th>
+                    <th>Images</th>
+                  </tr>
+                  <tr *ngFor="let item of list" style="color: black;">
+                    <td>{{item.id}}</td>
+                    <td>{{item.categoryId}}</td>
+                    <td>{{item.subCategoryId}}</td>
+                    <td>{{item.sellerid}}</td>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.itemDescription}}</td>
+                    <td>{{item.stockNumber}}</td>
+                    <td>{{item.remarks}}</td>
+                    <td>{{item.image}}</td>
+
+                  
+                  <td><button class= "btn btn-primary" (click)="GetItems(item.id)" data-toggle="modal" data-target="#myModal">Edit</button></td>
+                                  <td><button class= "btn btn-danger" (click)="Delete(item.id)">Delete</button></td>
+                                  </tr>
+                </table>
+             
+                
+            </div>
+            
+<!-- modal -->
+<div class="container" >
+    
+  <!-- Trigger the modal with a button -->
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+ -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Form</h4>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="viewform">
+             <div class="form-group ">
+                  <label>SubcategoryName</label><br>
+                  <input type="text" formControlName="subCategoryId" class="form-control" readonly /> -->
+              </div>
+              <div class="form-group ">
+                  <label>CategoryName</label><br>
+                  <input type="text" formControlName="categoryId" class="form-control" readonly />
+              </div>
+       <div class="form-group ">
+          <label>SellerId</label><br>
+          <input type="text" formControlName="sellerid" class="form-control" readonly />
+         </div>
+       <div class="form-group ">
+          <label>ItemId</label><br>
+          <input type="text" formControlName="id" class="form-control" readonly /> 
+       </div>
+          <div class="form-group ">
+              <label>ItemName</label><br>
+              <input type="text" formControlName="itemName" class="form-control" required />
+              
+          </div>
+        
+        
+        <div class="form-group ">
+            <label>Description</label><br>
+            <textarea formControlName="itemDescription" class="form-control" required ></textarea>
+              </div>
+      
+      
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" formControlName="price" class="form-control" required />
+         
+      </div>
+      
+      <div class="form-group">
+          <label>StockNumber</label>
+          <input type="text" formControlName="stockNumber" class="form-control" required />
+              </div>
+      
+      <div class="form-group">
+          <label>Remarks</label>
+          <textarea formControlName="remarks" class="form-control" required ></textarea>
+          
+      </div>      
+       
+      <div class="form-group">
+        <label>Images</label>
+        <textarea formControlName="image" class="form-control" required ></textarea>
+        
+    </div>              
+      
+      
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="Update()">Save</button>
+        </div>
+          </form>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+  
+
+<router-outlet></router-outlet>
+
+
+
+
+    

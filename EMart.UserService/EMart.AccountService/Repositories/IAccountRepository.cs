@@ -8,8 +8,8 @@ namespace EMart.AccountService.Repositories
 {
   public  interface IAccountRepository
     {
-        bool Buyerlogin(string username, string password);
-        bool Sellerlogin(string username, string password);
+        Buyer Buyerlogin(string username, string password);
+        Seller Sellerlogin(string username, string password);
         void BuyerRegister(Buyer b);
         void SellerRegister(Seller s);
         List<Buyer> GetBuyer();

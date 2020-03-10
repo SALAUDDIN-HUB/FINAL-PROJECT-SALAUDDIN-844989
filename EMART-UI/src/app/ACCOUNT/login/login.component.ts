@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Buyer } from 'src/app/Models/buyer';
+import { Seller } from 'src/app/Models/seller';
+import { Token } from 'src/app/Models/token';
+import { AccountService } from 'src/app/Sevices/account.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,48 +13,85 @@ import { Buyer } from 'src/app/Models/buyer';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  loginForm:FormGroup;
-submitted=false;
-item:Buyer;
-
-  constructor(private formbuilder:FormBuilder) { 
-    this.item=new Buyer();
+  loginform:FormGroup;
+  submitted=false;
+  buyer:Buyer;
+  seller:Seller;
+  role:string;
+  token:Token;
+  
+    constructor(private formbuilder:FormBuilder,private service:AccountService,private route:Router ) {
+      this.buyer=new Buyer();
+      this.seller=new Seller();
+      this.token=new Token();
+  
+     }
+  
+    ngOnInit() {
+      this.loginform=this.formbuilder.group({
+        username:['',Validators.required],
+        password:['',Validators.required],
+        role:['']
+      });
+    }
+    onSubmit()
+    {
+      this.submitted=true;
+      if(this.loginform.invalid)
+      {
+        return;
+      }
+      else
+      {
+        
+        
+        let username=this.loginform.value['username'];
+  let password=this.loginform.value['password'];
+  let role=this.loginform.value['role'];
+  // alert(username)
+  // alert(role)
+  if(role=='buyer')
+{
+  let token=new Token();
+this.service.BuyerLogin(username,password).subscribe(res=>{token=res;console.log(token)
+  if(token.message=="success"){
+    localStorage.setItem('buyer',token.buyerid);
+    alert("Form is Validated");
     
-
+  this.route.navigateByUrl("buyer-landing-page")
   }
-
-  ngOnInit() {
-    this.loginForm=this.formbuilder.group({
-      uname:['',Validators.required],
-      pwd:['',Validators.required]
-    });
+  else{
+    alert("inavlid");
   }
-onSubmit()
+});
+}
+if(role=='seller')
 {
-this.submitted=true;
-  if(this.loginForm.invalid)
-  {
-    return;
+ let token=new Token();
+this.service.SellerLogin(username,password).subscribe(res=>{token=res;console.log(token)
+  if(token.message=="success"){
+    localStorage.setItem('seller',token.sellerid);
+    this.route.navigateByUrl("seller-landing-page")
   }
-  else
-  {
-    alert("Form is Validate");
-    console.log(this.loginForm.value)
-    console.log(JSON.stringify(this.loginForm.value))
-    console.log(this.loginForm.value["uname"])
-    console.log(this.loginForm.value["pwd"])
-    //
-    this.item.username=this.loginForm.value["uname"]
-    this.item.password=this.loginForm.value["pwd"]
-    console.log(this.item)
+  else{
+    alert("inavlid");
   }
+});
 
 }
-get f() { return this.loginForm.controls; }
-onReset()
+if(username=="Admin" && password=="admin")
 {
-  this.submitted=false;
-  this.loginForm.reset();
+  alert('admin is logged in');
+  this.route.navigateByUrl("admin-landing-page");
 }
 }
+}
+    get f() {return this.loginform.controls};
+    onReset()
+    {
+      this.submitted=false;
+      this.loginform.reset();
+    }
+    
+  }
+  

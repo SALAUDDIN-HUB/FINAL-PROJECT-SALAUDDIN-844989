@@ -1,8 +1,6 @@
 export class Buyer {
-  RegisterBuyer(item: Buyer) {
-    throw new Error("Method not implemented.");
-  }
-    id:number;
+  
+    id:string;
     username:string;
     password:string;
     emailid:string;

@@ -10,18 +10,18 @@
             <div class="col-md-6">
                 <div class="contact-form">
                     <form [formGroup]="AddsubcategoryForm" (ngSubmit)="onSubmit()">
-                        <div class=form group>
+                        <!-- <div class=form group>
                             <label class="control-label col-sm-2">sub category ID:</label>
                             <input type="text" formControlName="SubCategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryId.errors }" />
                             <div *ngIf="submitted && f.SubCategoryId.errors" class="invalid-feedback">
                                 <div *ngIf="f.SubCategoryId.errors.required">ID is required</div>
                                 <div *ngIf="f.SubCategoryId.errors.pattern">Enter ID</div>
                             </div>                        
-                        </div>
+                        </div> -->
 
                         <div class=form group>
-                            <label class="control-label col-sm-2">Sub Category Name:</label>
-                            <input type="text" formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }" />
+                            <label class="control-label col-sm-2">SubCategoryName:</label>
+                            <input type="text" formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }" /> 
                             <div *ngIf="submitted && f.SubCategoryName.errors" class="invalid-feedback">
                                 <div *ngIf="f.SubCategoryName.errors.required">Category is required</div>
                                 <!-- <div *ngIf="f.cid.pattern">Enter Category</div> -->
@@ -29,8 +29,11 @@
 
                         </div>
                         <div class=form group>
-                            <label class="control-label col-sm-2"> Category Id:</label>
-                            <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
+                            <label class="control-label col-sm-2"> CategoryId:</label>
+                            <select formControlName="CategoryId" class="form-control">
+                                <option *ngFor="let item of categorylist" value="{{item.categoryId}}">{{item.categoryName}}</option>
+                            </select>
+                            <!-- <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" /> -->
                             <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
                                 <div *ngIf="f.CategoryId.errors.required">Category is required</div>
                                 <!-- <div *ngIf="f.cid.pattern">Enter Category</div> -->
@@ -38,7 +41,7 @@
 
                         </div>
                         <div class=form group>
-                            <label class="control-label col-sm-2">Brief Details:</label>
+                            <label class="control-label col-sm-2">BriefDetails:</label>
                             <input type="text" formControlName="BriefDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
                             <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">
                                 <div *ngIf="f.BriefDetails.errors.required">Sub Category is required</div>

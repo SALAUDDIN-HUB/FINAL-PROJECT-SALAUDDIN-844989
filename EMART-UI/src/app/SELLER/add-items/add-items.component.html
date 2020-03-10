@@ -9,19 +9,14 @@
             </div>
             <div class="col-md-6">
                 <div class="contact-form">
-                    <form [formGroup]="Itemform" (ngSubmit)="OnSubmit()">
-                        <div class=form group>
-                            <label class="control-label col-sm-2">ID:</label>
-                            <input type="text" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
-                            <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
-                                <div *ngIf="f.id.errors.required">ID is required</div>
-                                <div *ngIf="f.id.errors.pattern">Enter ID</div>
-                            </div>                        
-                        </div>
+                    <form [formGroup]="additemform" (ngSubmit)="OnSubmit()">
+                       
 
                         <div class=form group>
                             <label class="control-label col-sm-2">category id:</label>
-                            <input type="text" formControlName="categoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryId.errors }" />
+                                <select formControlName="categoryId" class="form-control" (change)="GetAllSubCategories()">
+                                <option *ngFor="let item of categorylist" value="{{item.categoryId}}">{{item.categoryName}}</option>   
+                           </select>
                             <div *ngIf="submitted && f.categoryId.errors" class="invalid-feedback">
                                 <div *ngIf="f.categoryId.errors.required">Category is required</div>
                                 <!-- <div *ngIf="f.cid.errors.pattern">Enter Category</div> -->
@@ -30,22 +25,25 @@
                         </div>
                         <div class=form group>
                             <label class="control-label col-sm-2">Sub Category id:</label>
-                            <input type="text" formControlName="subCategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subCategoryId.errors }" />
+                     
+                            <select formControlName="subCategoryId" class="form-control">
+                                <option *ngFor="let item of subcategorylist" value="{{item.subCategoryId}}">{{item.subCategoryName}}</option>   
+                           </select>
                             <div *ngIf="submitted && f.subCategoryId.errors" class="invalid-feedback">
                                 <div *ngIf="f.subCategoryId.errors.required">Sub Category is required</div>
                                 <!-- <div *ngIf="f.scid.pattern">Enter Sub Category</div> -->
                             </div> 
 
                         </div>
-                        <div class=form group>
+                        <!-- <div class=form group>
                             <label class="control-label col-sm-2">Seller id:</label>
                             <input type="text" formControlName="sellerid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellerid.errors }" />
                             <div *ngIf="submitted && f.sellerid.errors" class="invalid-feedback">
                                 <div *ngIf="f.sellerid.errors.required">Sub Category is required</div>
-                                <!-- <div *ngIf="f.scid.pattern">Enter Sub Category</div> -->
+                                 <div *ngIf="f.scid.pattern">Enter Sub Category</div> 
                             </div> 
 
-                        </div>
+                        </div> -->
                         <div class=form group>
                             <label class="control-label col-sm-2">Price:</label>
                             <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
@@ -89,24 +87,20 @@
                                 <div *ngIf="f.remarks.errors.required">Remarks is required</div>
                                 <!-- <div *ngIf="f.remarks.pattern">Enter Remarks</div> -->
                             </div> 
-
                         </div>
+                         <div class=form group>
+                            <label class="control-label col-sm-2">Image:</label>
+                            <input type="file" (change)="fileEvent($event)">
+
+                        </div> 
 
                         <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-10">
                               <button type="submit" class="btn btn-default">Add</button>
                             </div>
                           </div>
-                          <div class="form-group">        
-                            <div  class="col-sm-offset-2 col-sm-10">
-                              <button (click)="Search()" class="btn btn-default">Search</button>
-                            </div>
-                          </div>
-                          <div class="form-group">        
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <button (click)="Update()" class="btn btn-default">Update</button>
-                            </div>
-                          </div>
+                         
+                          
                           
                         
                    

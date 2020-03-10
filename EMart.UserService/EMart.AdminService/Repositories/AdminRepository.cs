@@ -41,5 +41,22 @@ namespace EMart.AdminService.Repositories
             _context.SubCategory.Remove(subcategory);
             _context.SaveChanges();
         }
+
+        public List<Category> GetAllCategories()
+        {
+            return _context.Category.ToList();
+        }
+
+      
+
+        public Category GetCategoryById(string cid)
+        {
+            return _context.Category.Find(cid);
+        }
+
+        public SubCategory GetSubCategoryById(string sid)
+        {
+            return _context.SubCategory.Find(sid);
+        }
     }
 }

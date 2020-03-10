@@ -36,4 +36,16 @@ export class ItemService {
   {
     return this.http.put<any>(this.url+'Item/UpdateItem',items,Requestheaders);
   }
+  public GetAllCategories():Observable<any>
+  {
+    return this.http.get<any>(this.url+'Item/GetAllCategories',Requestheaders);
+  }
+  public GetAllSubCategories(id:string):Observable<any>
+  {
+    return this.http.get<any>(this.url+'Item/GetAllSubCategories/'+id,Requestheaders);
+  }
+  public DeleteItem(id:string):Observable<any>
+  {
+    return this.http.delete<any>(this.url+'Item/DeleteItem/'+id,Requestheaders);
+  }
 }

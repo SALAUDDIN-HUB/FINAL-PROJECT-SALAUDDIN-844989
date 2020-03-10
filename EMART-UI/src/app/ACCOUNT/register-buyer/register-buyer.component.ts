@@ -18,7 +18,7 @@ constructor(private formbuilder:FormBuilder,private service:AccountService) { }
 
   ngOnInit() {
       this.RegisterForm=this.formbuilder.group({
-      id:['',[Validators.required,Validators.pattern('^[0-9]{4}$')]],
+      // id:['',[Validators.required,Validators.pattern('^[0-9]{4}$')]],
       username:['',[Validators.required,Validators.pattern('')]],
       password:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{7,10}[~`!@#$%^&*()-+=]$')]],
       emailid:['',[Validators.required,Validators.email]],
@@ -34,7 +34,7 @@ constructor(private formbuilder:FormBuilder,private service:AccountService) { }
     if(this.RegisterForm.valid)
     {
       this.item=new Buyer();
-      this.item.id=this.RegisterForm.value["id"];
+      this.item.id='BUYER'+Math.round(Math.random()*100);
       this.item.username=this.RegisterForm.value["username"];
       this.item.password=this.RegisterForm.value["password"];
       this.item.emailid=this.RegisterForm.value["emailid"];

@@ -76,6 +76,39 @@ namespace EMart.AdminService.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [HttpGet]
+        [Route("GetAllCategories")]
+        public IActionResult GetAllCategories()
+        {
+
+            return Ok(_repo.GetAllCategories());
+        }
+        [HttpGet]
+        [Route("GetCategoryById/{cid}")]
+        public IActionResult GetCategoryById(string cid)
+        {
+            try
+            {
+                return Ok(_repo.GetCategoryById(cid));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetSubCategoryById/{sid}")]
+        public IActionResult GetSubCategoryById(string sid)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategoryById(sid));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }
     

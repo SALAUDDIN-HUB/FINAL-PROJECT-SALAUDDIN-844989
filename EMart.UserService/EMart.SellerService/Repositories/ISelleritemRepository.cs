@@ -13,6 +13,8 @@ namespace EMart.SellerService.Repositories
         void DeleteItem(string id);
         void UpdateItem(Items obj);
         Items GetItems(string id);
+        List<Category> GetAllCategories();
+        List<SubCategory> GetAllSubCategories(string cid);
 
     }
 }

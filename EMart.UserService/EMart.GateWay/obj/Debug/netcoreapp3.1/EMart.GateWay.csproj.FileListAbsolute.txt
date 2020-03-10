@@ -23,7 +23,7 @@ E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\bin\Debug\netc
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\bin\Debug\netcoreapp3.1\Ocelot.dll
-E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cs
-E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cache
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.csproj.CopyComplete
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\bin\Debug\netcoreapp3.1\ocelot.json
+E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cs
+E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cache

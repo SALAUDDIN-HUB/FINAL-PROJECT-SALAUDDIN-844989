@@ -16,7 +16,7 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.CategoryForm=this.formbuilder.group({
-      CategoryId:['',[Validators.required]],
+      // CategoryId:['',[Validators.required]],
       CategoryName:['',[Validators.required]],
       BriefDetails:['',[Validators.required]]
      
@@ -28,7 +28,7 @@ export class AddCategoryComponent implements OnInit {
     if(this.CategoryForm.valid)
     {
       this.cate=new Category();
-      this.cate.CategoryId=this.CategoryForm.value["CategoryId"];
+      this.cate.CategoryId='CAT'+Math.round(Math.random()*100);
       this.cate.CategoryName=this.CategoryForm.value["CategoryName"];
       this.cate.BriefDetails=this.CategoryForm.value["BriefDetails"];
       console.log(this.cate); 
