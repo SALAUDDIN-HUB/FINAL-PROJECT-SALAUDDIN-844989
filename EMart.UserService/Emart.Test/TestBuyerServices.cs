@@ -108,6 +108,16 @@ namespace Emart.Test
         [Test]
         public void TestGetCartItems()
         {
+            var result = _repo.GetCartItems("7777");
+            Assert.IsNotNull(result);
+        }
+        [Test]
+        public void TestDeleteCartItem()
+        {
+           
+            _repo.DeleteCartItem("EMCR52");
+            var result = _repo.GetCart("EMCR52");
+            Assert.Null(result);
 
         }
     }

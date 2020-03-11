@@ -44,13 +44,14 @@ export class AddItemsComponent implements OnInit {
     itemDescription:['',Validators.required],
     stockNumber:['',Validators.required],
     remarks:['',Validators.required],
+    image:['',Validators.required],
     });
   }
    OnSubmit()
   {
     this.submitted=true;
-    // if(this.additemform.valid)
-    // {
+     if(this.additemform.valid)
+     {
       alert('Success!!\n\n')
       this.item.id='I'+Math.round(Math.random()*1000);
       this.item.categoryId=this.additemform.value['categoryId'],
@@ -61,14 +62,14 @@ export class AddItemsComponent implements OnInit {
      this.item.itemDescription=this.additemform.value['itemDescription'],
      this.item.stockNumber=Number(this.additemform.value['stockNumber']),
      this.item.remarks=this.additemform.value['remarks'],
-     this.item.image=this.image;
+     this.item.image=this.additemform.value['image'],
      console.log(this.item); 
      this.service.AddItems(this.item).subscribe(res=>{
        alert('Item Added Successfully');
      },err=>{
        console.log(err);
     })
-    // }
+    }
   }
   get f() { return this.additemform.controls; }
 onReset()

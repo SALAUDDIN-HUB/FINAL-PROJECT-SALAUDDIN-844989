@@ -34,7 +34,7 @@ export class ViewItemsComponent implements OnInit {
   ViewItems()
   { 
     let seller=localStorage.getItem('seller')
-    this.service.ViewItems("1").subscribe(res=>
+    this.service.ViewItems(seller).subscribe(res=>
       {
         this.list=res;
         console.log(this.list);
@@ -48,6 +48,7 @@ export class ViewItemsComponent implements OnInit {
   {
     // this.isShow=!this.isShow;
     this.items=new Items();
+   
     this.items.id=this.viewform.value["id"];
     this.items.categoryId=this.viewform.value["categoryId"];
     this.items.subCategoryId=this.viewform.value["subCategoryId"];

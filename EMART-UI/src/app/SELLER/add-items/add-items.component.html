@@ -13,7 +13,7 @@
                        
 
                         <div class=form group>
-                            <label class="control-label col-sm-2">category id:</label>
+                            <label class="control-label col-sm-4">category id:</label>
                                 <select formControlName="categoryId" class="form-control" (change)="GetAllSubCategories()">
                                 <option *ngFor="let item of categorylist" value="{{item.categoryId}}">{{item.categoryName}}</option>   
                            </select>
@@ -24,7 +24,7 @@
 
                         </div>
                         <div class=form group>
-                            <label class="control-label col-sm-2">Sub Category id:</label>
+                            <label class="control-label col-sm-6">Sub Category id:</label>
                      
                             <select formControlName="subCategoryId" class="form-control">
                                 <option *ngFor="let item of subcategorylist" value="{{item.subCategoryId}}">{{item.subCategoryName}}</option>   
@@ -54,7 +54,7 @@
 
                         </div>
                         <div class=form group>
-                            <label class="control-label col-sm-2">Item name:</label>
+                            <label class="control-label col-sm-4">Item name:</label>
                             <input type="text" formControlName="itemName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemName.errors }" />
                             <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
                                 <div *ngIf="f.itemName.errors.required">Item name required</div>
@@ -72,10 +72,10 @@
 
                         </div>
                         <div class=form group>
-                            <label class="control-label col-sm-2">Stock Number:</label>
+                            <label class="control-label col-sm-6">Stock Number:</label>
                             <input type="number" formControlName="stockNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stockNumber.errors }" />
                             <div *ngIf="submitted && f.stockNumber.errors" class="invalid-feedback">
-                                <div *ngIf="f.stockNumber.errors.required">Username is required</div>
+                                <div *ngIf="f.stockNumber.errors.required">Stock Number is required</div>
                                 <!-- <div *ngIf="f.stocknumber.pattern"></div> -->
                             </div> 
 
@@ -90,6 +90,7 @@
                         </div>
                          <div class=form group>
                             <label class="control-label col-sm-2">Image:</label>
+                            <div *ngIf="f.image.errors.required">image is required</div>
                             <input type="file" (change)="fileEvent($event)">
 
                         </div> 

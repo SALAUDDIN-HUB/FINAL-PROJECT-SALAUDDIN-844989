@@ -2702,6 +2702,24 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "EMart.SellerService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Cors": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1"
+        },
+        "compile": {
+          "bin/placeholder/EMart.SellerService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EMart.SellerService.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -8735,6 +8753,11 @@
       "type": "project",
       "path": "../EMart.BuyerService/EMart.BuyerService.csproj",
       "msbuildProject": "../EMart.BuyerService/EMart.BuyerService.csproj"
+    },
+    "EMart.SellerService/1.0.0": {
+      "type": "project",
+      "path": "../EMart.SellerService/EMart.SellerService.csproj",
+      "msbuildProject": "../EMart.SellerService/EMart.SellerService.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8742,6 +8765,7 @@
       "EMart.AccountService >= 1.0.0",
       "EMart.AdminService >= 1.0.0",
       "EMart.BuyerService >= 1.0.0",
+      "EMart.SellerService >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.2",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.2",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
@@ -8783,6 +8807,9 @@
             },
             "E:\\FINAL-PROJECT-SALAUDDIN-844989\\EMart.UserService\\EMart.BuyerService\\EMart.BuyerService.csproj": {
               "projectPath": "E:\\FINAL-PROJECT-SALAUDDIN-844989\\EMart.UserService\\EMart.BuyerService\\EMart.BuyerService.csproj"
+            },
+            "E:\\FINAL-PROJECT-SALAUDDIN-844989\\EMart.UserService\\EMart.SellerService\\EMart.SellerService.csproj": {
+              "projectPath": "E:\\FINAL-PROJECT-SALAUDDIN-844989\\EMart.UserService\\EMart.SellerService\\EMart.SellerService.csproj"
             }
           }
         }
