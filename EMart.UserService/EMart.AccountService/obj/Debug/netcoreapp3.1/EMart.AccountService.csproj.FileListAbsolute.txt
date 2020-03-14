@@ -127,3 +127,4 @@ E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.AccountService\bin\Deb
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.AccountService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.AccountService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.AccountService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.AccountService\obj\Debug\netcoreapp3.1\EMart.AccountService.MvcApplicationPartsAssemblyInfo.cache
