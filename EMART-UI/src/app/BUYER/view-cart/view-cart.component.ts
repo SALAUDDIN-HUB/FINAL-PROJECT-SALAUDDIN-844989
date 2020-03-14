@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/Models/cart';
 import { Items } from 'src/app/Models/items';
-import{BuyerService}from 'src/app/Sevices/buyer.service';
+import{ BuyerService }from 'src/app/Sevices/buyer.service';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class ViewCartComponent implements OnInit {
     console.log(this.item);
     this.item=item1,
     localStorage.setItem('item1',JSON.stringify(this.item));
-    this.route.navigateByUrl('/home/buy-product');
+    this.route.navigateByUrl('/buyer-landing-page/buy-product');
 
   }
   Remove(cartid:string){

@@ -10,6 +10,7 @@ namespace EMart.SellerService.Repositories
     {
         void EditProfile(Seller obj);
         Seller GetProfile(string id);
+        List<PurchaseHistory> GetReports(string SellerId);
 
 
     }

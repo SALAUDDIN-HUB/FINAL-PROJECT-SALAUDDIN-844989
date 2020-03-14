@@ -13,6 +13,7 @@ export class ViewItemsComponent implements OnInit {
   items:Items;
   viewform:FormGroup;
   isShow:boolean=true;
+  image:string;
 
   constructor(private service:ItemService,private formBuilder:FormBuilder) { }
 
@@ -98,7 +99,7 @@ export class ViewItemsComponent implements OnInit {
                categoryId:this.items.categoryId,
                subCategoryId:this.items.subCategoryId,
                remarks:this.items.remarks,
-               image:this.items.image,
+               image:this.items.image
                
              }
            )
@@ -108,6 +109,10 @@ export class ViewItemsComponent implements OnInit {
            console.log(err);
          }
        )
+        }
+       fileEvent(event)
+       {
+         this.image=event.target.files[0].name;
+       }
 
-}
 }

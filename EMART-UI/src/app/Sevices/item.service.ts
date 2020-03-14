@@ -48,4 +48,7 @@ export class ItemService {
   {
     return this.http.delete<any>(this.url+'Item/DeleteItem/'+id,Requestheaders);
   }
+  public GetReports(SellerId:string):Observable<any>{
+    return this.http.get<any>(this.url+'Seller/GetReports/'+SellerId,Requestheaders);
+  }
 }

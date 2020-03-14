@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import{Buyer}from 'src/app/Models/buyer';
 import{Items}from 'src/app/Models/items';
-import{BuyerService}from 'src/app/Sevices/buyer.service';
+import { BuyerService } from 'src/app/Sevices/buyer.service';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/Models/category';
 import { ThrowStmt } from '@angular/compiler';
@@ -51,6 +51,13 @@ export class SearchitemsComponent implements OnInit {
     // remarks:['']
   });
   }
+  BuyNow(item1:Items){
+    console.log(this.item);
+    this.item=item1,
+    localStorage.setItem('item1',JSON.stringify(this.item));
+    this.route.navigateByUrl('/buyer-landing-page/buy-product');
+
+  }
   // search(name:string)
   // {
   //   this.service.SearchItemByName(name).subscribe(res=>{
@@ -89,7 +96,6 @@ export class SearchitemsComponent implements OnInit {
    this.cart.categoryId=item2.categoryId;
    this.cart.subCategoryId=item2.subCategoryId;
    this.cart.sellerid=item2.sellerid;
-   
    this.cart.stockNumber=Number(item2.stockNumber);
    this.cart.price=Number(item2.price);
    this.cart.itemDescription=item2.itemDescription;

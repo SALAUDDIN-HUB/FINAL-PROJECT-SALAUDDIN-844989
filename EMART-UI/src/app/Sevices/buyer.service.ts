@@ -12,9 +12,6 @@ const Requestheaders={headers:new HttpHeaders({
   providedIn: 'root'
 })
 export class BuyerService {
-  GetAllCategories() {
-    throw new Error("Method not implemented.");
-  }
   url:string='http://localhost:52676/Buyer/'
 
   constructor(private http:HttpClient,private service:BuyerService) { }
@@ -58,4 +55,10 @@ export class BuyerService {
   {
     return this.http.delete<any>(this.url+'DeleteCartItem/'+itemid,Requestheaders);
   }
+   public GetPurchaseHistory(buyerid:string):Observable<any>{
+    return this.http.get<any>(this.url+'PurchaseHistory/'+buyerid,Requestheaders);
+  }
+  public GetCount(buyerid:string):Observable<any>{
+    return this.http.get<any>(this.url+'GetCount/'+buyerid,Requestheaders);
+  }  
 }

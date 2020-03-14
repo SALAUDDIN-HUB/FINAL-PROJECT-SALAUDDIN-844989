@@ -22,12 +22,12 @@ export class ViewProfileComponent implements OnInit {
       username:[''],
       password:[''],
       companyName:[''],
-      Gstin:[''],
-      BriefAboutCompany:[''],
+     // Gstin:[''],
+    //  BriefAboutCompany:[''],
       postalAddress:[''],
       website:[''],
       emailid:[''],
-      ContactNumber:['']
+   // contactNumber:['']
     });
     this.Search();
   }
@@ -46,12 +46,12 @@ export class ViewProfileComponent implements OnInit {
           username:this.seller.username,
           password:this.seller.password,
           companyName:this.seller.companyName,
-          Gstin:this.seller.Gstin,
-          BriefAboutCompany:this.seller.BriefAboutCompany,
+         // Gstin:this.seller.Gstin,
+        //  BriefAboutCompany:this.seller.BriefAboutCompany,
           postalAddress:this.seller.postalAddress,
           website:this.seller.website,
           emailid:this.seller.emailid,
-          ContactNumber:this.seller.ContactNumber
+         //contactNumber:this.seller.ContactNumber
         });
       })
   }
@@ -63,12 +63,12 @@ export class ViewProfileComponent implements OnInit {
       this.seller.username=this.Viewform.value["username"];
       this.seller.password=this.Viewform.value["password"];
       this.seller.companyName=this.Viewform.value["companyName"];
-      this.seller.Gstin=this.Viewform.value["Gstin"];
-      this.seller.BriefAboutCompany=this.Viewform.value["BriefAboutCompany"];
+    //  this.seller.Gstin=this.Viewform.value["Gstin"];
+    //  this.seller.BriefAboutCompany=this.Viewform.value["BriefAboutCompany"];
       this.seller.postalAddress=this.Viewform.value["postalAddress"];
       this.seller.website=this.Viewform.value["website"];
       this.seller.emailid=this.Viewform.value["emailid"];
-      this.seller.ContactNumber=this.Viewform.value["ContactNumber"];   
+     // this.seller.ContactNumber=this.Viewform.value["contactNumber"];   
       console.log(this.seller);
       this.service.Update(this.seller).subscribe(res=>{
          console.log('Record Updated');

@@ -120,4 +120,3 @@ E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.SellerService\bin\Debu
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.SellerService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.SellerService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.SellerService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\FINAL-PROJECT-SALAUDDIN-844989\EMart.UserService\EMart.SellerService\obj\Debug\netcoreapp3.1\EMart.SellerService.MvcApplicationPartsAssemblyInfo.cache

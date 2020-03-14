@@ -46,6 +46,18 @@ namespace EMart.SellerService.Controllers
                 return NotFound(ex.InnerException.Message);
             }
         }
-
+        [HttpGet]
+        [Route("GetReports/{Sellerid}")]
+        public IActionResult GetReports(string Sellerid)
+        {
+            try
+            {
+                return Ok(_repo.GetReports(Sellerid));
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

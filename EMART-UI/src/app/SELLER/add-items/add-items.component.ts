@@ -44,15 +44,15 @@ export class AddItemsComponent implements OnInit {
     itemDescription:['',Validators.required],
     stockNumber:['',Validators.required],
     remarks:['',Validators.required],
-    image:['',Validators.required],
+    image:['']
     });
   }
    OnSubmit()
   {
     this.submitted=true;
-     if(this.additemform.valid)
-     {
-      alert('Success!!\n\n')
+    //  if(this.additemform.valid)
+    //  {
+     // alert('Success!!\n\n')
       this.item.id='I'+Math.round(Math.random()*1000);
       this.item.categoryId=this.additemform.value['categoryId'],
      this.item.subCategoryId=this.additemform.value['subCategoryId'],
@@ -70,7 +70,7 @@ export class AddItemsComponent implements OnInit {
        console.log(err);
     })
     }
-  }
+  
   get f() { return this.additemform.controls; }
 onReset()
 {
@@ -87,7 +87,7 @@ GetAllSubCategories()
     })
   }
   fileEvent(event){
-    this.image = event.target.files[0].name;
+    this.image=event.target.files[0].name;
 }
 
 

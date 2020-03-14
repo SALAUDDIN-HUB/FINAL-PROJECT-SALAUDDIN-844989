@@ -25,5 +25,10 @@ namespace EMart.SellerService.Repositories
             return _context.Seller.Find(id);
             
         }
+
+        public List<PurchaseHistory> GetReports(string SellerId)
+        {
+            return _context.PurchaseHistory.Where(e => e.SellerId == SellerId).ToList();
+        }
     }
 }

@@ -1,12 +1,12 @@
 <div class="row">
 
   
-    <div class="card col-sm-2"*ngFor="let i of list" >
+    <div style="margin-left:30px" class="card col-sm-2"*ngFor="let i of list" >
       <img src="/assets/images/{{i.image}}" alt="product" style="width:100%">
       <h1>{{i.itemName}} </h1>
       <p class="price">{{i.price}}</p>
       <p>{{i.itemDescription}}</p>
-      <p><button>Buy Now</button></p>
+      <p><button (click)="BuyNow(i)">Buy Now</button></p>
       <p><button (click)="AddtoCart(i)">Add to Cart</button></p>
     </div>
     

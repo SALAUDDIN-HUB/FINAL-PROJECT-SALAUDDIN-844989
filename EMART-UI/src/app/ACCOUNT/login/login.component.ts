@@ -56,12 +56,12 @@ export class LoginComponent implements OnInit {
 this.service.BuyerLogin(username,password).subscribe(res=>{token=res;console.log(token)
   if(token.message=="success"){
     localStorage.setItem('buyer',token.buyerid);
+    localStorage.setItem('token',this.token.token);
     alert("Form is Validated");
-    
-  this.route.navigateByUrl("buyer-landing-page")
+     this.route.navigateByUrl("buyer-landing-page")
   }
   else{
-    alert("inavlid");
+    alert("invalid");
   }
 });
 }
@@ -71,10 +71,11 @@ if(role=='seller')
 this.service.SellerLogin(username,password).subscribe(res=>{token=res;console.log(token)
   if(token.message=="success"){
     localStorage.setItem('seller',token.sellerid);
+    localStorage.setItem('token',this.token.token);
     this.route.navigateByUrl("seller-landing-page")
   }
   else{
-    alert("inavlid");
+    alert("invalid");
   }
 });
 

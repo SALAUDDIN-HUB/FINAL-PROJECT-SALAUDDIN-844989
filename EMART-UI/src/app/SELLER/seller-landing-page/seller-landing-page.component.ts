@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-landing-page',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerLandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { 
+    if(localStorage.getItem('token')){
 
-  ngOnInit() {
+      
+      }
+      
+    else{
+      alert('please login With your Credentials');
+      this.route.navigateByUrl('/home/login');
+    }
   }
 
+  ngOnInit() {
+    
+  }
+LogOut()
+{
+  localStorage.clear();
+  this.route.navigateByUrl('/home/login')
+}
 }

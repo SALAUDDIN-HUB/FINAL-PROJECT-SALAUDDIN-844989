@@ -21,7 +21,7 @@ export class BuyProductComponent implements OnInit {
   obj:PurchaseHistory;
   ngOnInit() {
     this.RegisterForm=this.formBuilder.group({
-      transactiontype:[''],
+      Transactiontype:[''],
       cardnumber:[''],
       cvv:[''],
       ed:[''],
@@ -32,18 +32,19 @@ export class BuyProductComponent implements OnInit {
     })
      this.item=JSON.parse(localStorage.getItem('item1'));
      console.log(this.item);
-     console.log(this.item.id);
+     
   }
   onSubmit()
   {
+    let bid=localStorage.getItem('buyer');
      this.obj=new PurchaseHistory();
      this.obj.id='TID'+Math.round(Math.random()*1000);
-     this.obj.Buyerid=localStorage.getItem('Buyerid');
-     this.obj.sellerid=this.item.sellerid;
+     this.obj.Buyerid=bid;
+    this.obj.sellerid=this.item.sellerid;
      this.obj.numberofitems=this.RegisterForm.value["numberofitems"];
      this.obj.Itemid=this.item.id;
      this.obj.Transactiontype=this.RegisterForm.value["Transactiontype"]
-     this.obj.Datetime=this.RegisterForm.value["Datetime"];
+     this.obj.Datetime=new Date();
      this.obj.remarks=this.RegisterForm.value["remarks"];
      console.log(this.obj);
      this.service.BuyItem(this.obj).subscribe(res=>{

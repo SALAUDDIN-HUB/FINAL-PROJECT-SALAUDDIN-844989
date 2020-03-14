@@ -29,6 +29,9 @@
                         <li class="col-sm-2 nav-item text-center">
                             <a class="nav-link btn-primary" [routerLink]="['/buyer-landing-page/edit-profile']" >View Profile</a>
                         </li>
+                        <li class="col-sm-2 nav-item text-center">
+                            <a class="nav-link btn-primary" [routerLink]="['/buyer-landing-page']" (click)="LogOut()" >Logout</a>
+                        </li>
                         
                     </ul>
                    
@@ -41,8 +44,41 @@
         </header>
         
   
-
-  
+        <!-- <div class="search-container mt-10">
+           
+              <input type="text" placeholder="Search.." name="search"[(ngModel)]="itemName">
+              <button type="submit"(click)="search(itemName)"><i class="fa fa-search"></i></button>
+            
+          
+        </div>
+        
+        
+         
+          <div class="row">
+        
+          
+             <h1 class="display-1">Ocean of Items</h1> 
+              
+               cards -->
+              <!-- <div class="card col-sm-2"*ngFor="let i of itemlist" >
+                <img src="/assets/images/{{i.image}}" alt="Denim Jeans" style="width:100%">
+                <h1>{{i.itemName}} </h1>
+                <p class="price">{{i.price}}</p>
+                <p>{{i.itemDescription}}</p> -->
+                 <!-- <p><button >Buy Now</button></p> 
+                <p><button (click)="AddtoCart(i)">Add to Cart</button></p> -->
+              <!-- </div>
+              
+              
+               
+            
+            <br/>
+            <br/>
+                
+               
+                 
+              </div>
+   --> 
 
     </body>
 </html>

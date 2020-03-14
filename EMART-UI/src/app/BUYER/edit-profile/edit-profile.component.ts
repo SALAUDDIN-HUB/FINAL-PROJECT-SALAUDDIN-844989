@@ -58,6 +58,7 @@ constructor(private formbuilder:FormBuilder,private service:BuyerService) {
       this.service.Update(this.buyer).subscribe(res=>
         {
           console.log('Updated succesfully');
+          alert("Updated successfully");
         },err=>{console.log(err)}
   
         )

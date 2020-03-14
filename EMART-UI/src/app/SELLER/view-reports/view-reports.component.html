@@ -1,1 +1,25 @@
-<p>view-reports works!</p>
+<main class="bg">
+    <div>
+        <div class="container">
+               <br/> 
+            <table class="table table-bordered">
+              <tr style="color:black">
+                <th>Sold item id</th>
+                <th>Quantity</th>
+                <th>Transaction Mode</th>
+                <th>Transaction ID</th>
+              </tr>
+              <tr *ngFor="let item of plist" style="color:black;">
+                <td>{{item.itemId}}</td>
+                <td>{{item.numberofitems}}</td>
+                <td>{{item.transactionType}}</td>
+                <td>{{item.id}}</td> 
+                </tr>
+              </table>
+              <div class="text-center">
+              </div>
+          </div>
+     </div>    
+</main>
+
+

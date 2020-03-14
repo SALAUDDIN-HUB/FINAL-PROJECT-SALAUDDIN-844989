@@ -24,11 +24,14 @@
                         <li class="col-sm-2 nav-item text-center">
                             <a class="nav-link btn-primary"[routerLink]="['/admin-landing-page/daily-reports']"  >DailyReports</a>
                         </li> -->
-                        <li class="col-sm-6 nav-item text-center">
+                        <li class="col-sm-4 nav-item text-center">
                             <a class="nav-link btn-primary"[routerLink]="['/admin-landing-page/add-category']"  >Add Category</a>
                         </li>
-                        <li class="col-sm-6 nav-item text-center">
+                        <li class="col-sm-4 nav-item text-center">
                             <a class="nav-link btn-primary"[routerLink]="['/admin-landing-page/add-subcategory']"  >Add Sub Category</a>
+                        </li>
+                        <li class="col-sm-4 nav-item text-center">
+                            <a class="nav-link btn-primary"[routerLink]="['/admin-landing-page']" (click)="LogOut()" >Logout</a>
                         </li>
                         
     
@@ -40,6 +43,7 @@
     
             </nav>
         </header>
+        
     </body>
 </html>
   <router-outlet></router-outlet>

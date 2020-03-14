@@ -1,10 +1,10 @@
 
-                       
+               <div class="bg">        
 
                             
             <div class="form-group">
               <table class="table table-bordered">
-                  <tr style="color: #ff9b00;">
+                  <tr style="color: black;">
                     <th>ItemId</th>
                     <th>Category ID</th>
                     <th>SubCategory ID</th>
@@ -14,7 +14,7 @@
                     <th>Description</th>
                     <th>Stock</th>
                     <th>Remarks</th>
-                    <th>Images</th>
+                    <!-- <th>Images</th>  -->
                   </tr>
                   <tr *ngFor="let item of list" style="color: black;">
                     <td>{{item.id}}</td>
@@ -26,7 +26,7 @@
                     <td>{{item.itemDescription}}</td>
                     <td>{{item.stockNumber}}</td>
                     <td>{{item.remarks}}</td>
-                    <td>{{item.image}}</td>
+                    <!-- <td>{{item.image}}</td>  -->
 
                   
                   <td><button class= "btn btn-primary" (click)="GetItems(item.id)" data-toggle="modal" data-target="#myModal">Edit</button></td>
@@ -36,7 +36,7 @@
              
                 
             </div>
-            
+            </div>
 <!-- modal -->
 <div class="container" >
     
@@ -101,11 +101,11 @@
           
       </div>      
        
-      <div class="form-group">
+       <div class="form-group">
         <label>Images</label>
         <textarea formControlName="image" class="form-control" required ></textarea>
         
-    </div>              
+    </div>               
       
       
       <div class="modal-footer">
